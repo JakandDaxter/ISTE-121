@@ -6,7 +6,7 @@
  */
 
 public class Circle {
-   // circle radius
+   //Circle radius;
    private double radius;
 
    /**
@@ -14,7 +14,6 @@ public class Circle {
     * @param _radius the radius of the circle
     */
    public Circle(double _radius ) {
-      // implement body here
    }
 
    // accessor
@@ -26,7 +25,7 @@ public class Circle {
    // mutator
 
    public void setRadius(double newRadius) {
-   	// implement body here
+   	radius = newRadius;
    }
 
    // methods
@@ -45,7 +44,7 @@ public class Circle {
     * @param factor the stretch factor
     */
    public void stretchBy(double factor ) {
-      // implement body here
+      radius = radius * factor;
    }
 
    /**
