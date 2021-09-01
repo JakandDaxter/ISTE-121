@@ -16,11 +16,13 @@ public class Circle {
    public Circle(double _radius ){
          if(isValid(_radius)){
             this.radius = _radius;
-         }else{
-            System.out.println("Radius can not be less than or equal to 0.0");
-            System.out.println("Program Exiting");
-            System.exit(0);
+         }else {
+            try {
+            throwShapeExcept("Radius");
+         } catch (ShapeException e) {
+            e.printStackTrace();
          }
+   }
 
    }
 
@@ -36,9 +38,11 @@ public class Circle {
       if(isValid(newRadius)){
          this.radius = newRadius;
       }else{
-         System.out.println("Radius can not be less than or equal to 0.0");
-         System.out.println("Program Exiting");
-         System.exit(0);
+         try {
+         throwShapeExcept("New Radius");
+      } catch (ShapeException e) {
+         e.printStackTrace();
+      }
       }
    }
 
@@ -60,10 +64,12 @@ public class Circle {
    public void stretchBy(double factor ){
       if(isValid(factor)){
          radius = radius * factor;
-      }else{
-         System.out.println("The factor can not be less than or equal to 0.0");
-         System.out.println("Program Exiting");
-         System.exit(0);
+      }else {
+         try {
+            throwShapeExcept("Factor");
+         } catch (ShapeException e) {
+            e.printStackTrace();
+         }
       }
    }
 
@@ -79,10 +85,18 @@ public class Circle {
    /**
     * isValid  - validates circle dimensions
     * the value has to be , x > 0.0
-    * @param x the stretch factor
+    * @param x value to be verified
     * @return if value is greater than  0.0
     */
    public boolean isValid(double x) {
       return x > 0.0;
+   }
+
+   /**
+    * throwShapeExcept  - Throws Shape Exception
+    * @param x Details of value that caused the exception to be thrown
+    */
+   public void throwShapeExcept(String x) throws ShapeException {
+      throw new ShapeException("The " + x + " can not be less than or equal to 0.0" );
    }
 }
