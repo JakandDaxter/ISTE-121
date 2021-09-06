@@ -79,6 +79,9 @@ public class Circle {
     */
    public String toString() {
      // implement body here
+      if(radius==0.0){
+         return "";
+      }
       return "Circle: " + this.radius;
    }
 

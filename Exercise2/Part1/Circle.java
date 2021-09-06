@@ -1,5 +1,3 @@
-package Part1;
-
 /**
  * Circle - class to model a circle
  * ISTE-121 Bonus Lab A - student starter code
